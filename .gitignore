@@ -3,6 +3,7 @@ terraform/.terraform/
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
 terraform/.terraform.lock.hcl
+terraform/terraform.tfvar
 
 # Prevent any huge binary files (like providers) from being tracked
 *.exe

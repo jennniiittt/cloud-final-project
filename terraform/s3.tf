@@ -18,7 +18,7 @@ resource "aws_s3_bucket_website_configuration" "static_site" {
   }
 
   error_document {
-    key = "web.html"
+    key = "error.html"
   }
 }
 
@@ -63,5 +63,14 @@ resource "aws_s3_object" "css_file" {
   source       = "../static_web/styles.css"
   etag         = filemd5("../static_web/styles.css")
   content_type = "text/css"
+  #acl          = "public-read"
+}
+
+resource "aws_s3_object" "error" {
+  bucket       = aws_s3_bucket.static_site.bucket
+  key          = "error.html"
+  source       = "../static_web/error.html"
+  etag         = filemd5("../static_web/error.html")
+  content_type = "text/html"
   #acl          = "public-read"
 }

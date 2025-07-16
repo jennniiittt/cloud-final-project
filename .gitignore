@@ -1,1 +1,12 @@
-terraform/.terraform
+# Ignore Terraform state and cache
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/.terraform.lock.hcl
+
+# Prevent any huge binary files (like providers) from being tracked
+*.exe
+*.zip
+*.tar.gz
+*.log
+*.bin
